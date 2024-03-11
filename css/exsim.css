@@ -1,0 +1,309 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+/*===== VARIABLES CSS =====*/
+:root{
+
+  /*===== Colors =====*/
+  --first-color: #161414;
+  --black-color: #000000;
+  --first-color-light: #F7F6FB;
+  --first-color-dark: #00EDDF;
+  --white-color: #F7F6FB;
+  
+  /*===== Font and typography =====*/
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  background-color: #0b0a20; 
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s;
+  overflow-x: hidden;
+}
+
+a{
+  text-decoration: none;
+}
+/*===== scene =====*/
+.content {
+  flex: 1;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+body {
+	font-family: 'Kite One', sans-serif;
+	font-size:14px;
+    background-color: hsl(var(--neutral100));
+    color: hsl(var(--neutral700));
+}
+
+:root {
+    --primary100: 183, 100%, 25%;
+    --primary200: 183, 100%, 50%;
+    --primary300: 183, 100%, 75%;
+    --neutral100: 240, 100%, 7%;
+    --neutral200: 240, 32%, 17%;
+    --neutral300: 240, 32%, 26%;
+    --neutral400: 240, 32%, 35%;
+    --neutral500: 240, 32%, 40%;
+    --neutral600: 240, 32%, 60%;
+    --neutral700: 240, 32%, 80%;
+    --neutral800: 240, 32%, 96%;
+}
+
+.left-side{
+  padding-top: 20px;
+  position: absolute;
+  padding-left: 30px;
+}
+#graph {
+
+	width: 400px;
+	height: 400px;
+
+margin-left: 40px;
+  background-color: #00F0FF;
+	text-align:center;
+  padding-bottom: 20px;
+}
+
+
+.graph-controls{
+padding-left: 80px;
+padding-top: 20px;
+justify-content: center;
+align-items: flex-start;
+
+
+}
+
+
+#canvas {
+	box-sizing: padding-box;
+padding-left: 2hw;
+
+	width: 400px;
+	height: 400px;
+	border-radius: 20px;
+
+
+}
+
+.numElements{
+	color: #00F0FF;
+}
+.topBox p{
+
+color: #00F0FF;
+}
+#control {
+position: relative;
+padding-left: 15px;
+right: -85vh;
+	width: 700px;
+	height:490px;
+	border-radius: 20px;
+	border:1px solid #c10000;
+	text-align: center;
+    background: linear-gradient(130deg, hsla(var(--primary200), .2), hsla(var(--neutral100), 0));
+	
+    /** Backdrop filter adds that nice Glassmorphism effect if there are background elements **/
+    -webkit-backdrop-filter: blur( .5px );
+    backdrop-filter: blur( .5px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	border-color: #00F0FF;
+}
+
+@keyframes glow {
+    0%, 100% {
+        stroke-width: 3px;
+    }
+    50% {
+        stroke-width: 6px;
+    }
+}
+
+.svg {
+    overflow: visible;
+
+    &__stroke {
+        fill: none;
+        stroke-miterlimit: 10;
+
+        &--glow {
+            stroke-width: 3px;
+            animation-name: glow;
+            stroke: hsla(var(--primary200), .5);
+        }
+        
+        &--bottom {
+            stroke-width: 1.5px;
+            stroke: hsl(var(--primary200));
+        }
+
+        &--top {
+            stroke-width: 1px;
+            stroke: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+
+.right-side{
+  padding-top: 20px;
+  padding-right: -20px;
+  position: relative;
+left: 90vh;
+}
+
+
+
+ul {
+	list-style-type: none;
+	display: table;
+	margin:0;
+	padding:0;
+}
+
+ul li {
+	display:table-cell;
+	text-align: center;
+	padding:10px;
+}
+
+
+input, input[type] {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+h3 {
+	text-align: center;
+	font-size:13px;
+	font-style: italic;
+	margin-top:4px;
+	color: #00F0FF;
+}
+
+.selected {
+	border:3px solid #13e2f1;
+}
+
+.slide {
+	margin-left:13px;
+}
+
+#topBox{
+	
+	position: relative;
+	display:block;
+	margin-bottom:5px;
+	height:250px;
+	text-align: center;
+	color: #a7a2b0;
+}
+
+#botBox {
+	position: relative;
+	display:block;
+	margin-bottom:5px;
+	height:250px;
+	text-align: center;
+	color: #a7a2b0;
+	width:260px;
+	margin:2vw auto;
+	
+}
+
+#sliderSpacing, #sliderPhase {
+	display:inline-block;
+	width:200px;
+	margin:3px auto;
+}
+
+.horiz-slidebox, .vert-slidebox {
+	width:33px;
+	text-align: center;
+}
+
+.horiz-slidebox {
+	float:left;
+	
+	margin-right:14px;
+}
+
+.ui-slider-legend {
+	display:table;
+	width:200px;
+	margin:0 0 0 60px;
+}
+
+.ui-slider-legend p {
+	display:table-cell;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+
+#numElements {
+	width:40px;
+	font-family: 'Kite One', sans-serif;
+	font-size:12px;
+}
+
+.icon {
+	width:30px;
+}
+
+
+.submit{
+	background-color: #390993;
+}
+
+input[type=submit] {
+	background: linear-gradient(130deg, hsla(var(--primary200), .2), hsla(var(--neutral100), 0));
+  position: relative;
+  
+	padding-bottom: 20px;
+    /** Backdrop filter adds that nice Glassmorphism effect if there are background elements **/
+    -webkit-backdrop-filter: blur( .5px );
+    backdrop-filter: blur( .5px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	border-color: #00F0FF;
+	text-decoration-color: #ccc;
+  }
+
+
+  input[value=rectangular] {
+	background: linear-gradient(130deg, hsla(var(--primary200), .2), hsla(var(--neutral100), 0));
+	
+    /** Backdrop filter adds that nice Glassmorphism effect if there are background elements **/
+    -webkit-backdrop-filter: blur( .5px );
+    backdrop-filter: blur( .5px );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	border-color: #00F0FF;
+	text-decoration-color: #881b1b;
+	
+	
+
+
+  }

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+    <script src="../javascript/antennajs/simulation.js"></script>
+		<script src="../javascript/antennajs/ArRaydiate.js"></script>
+		<script src="../javascript/antennajs/common.js"></script>
+		<script src="../javascript/antennajs/Antenna.js"></script>
+		<script src="../javascript/antennajs/DataPoint.js"></script>
+		<script src="../javascript/antennajs/AntennaArray.js"></script>
+		<script src="../javascript/antennajs/ArrayFactor.js"></script>
+		<script src="../javascript/antennajs/PolarGraph.js"></script>
+		<script src="../javascript/antennajs/RectGraph.js"></script>
+		<script src="../javascript/antennajs/PlotPanel.js"></script>
+		<script src="../javascript/antennajs/ControlPanel.js"></script>
+        
+	
+
+
+
+
+
+
+		<link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet"  />
+		<!-- <link href='css/arraydiate.css' rel='stylesheet' type='text/css'> -->
+        <!-- ===== BOX ICONS ===== -->
+         <!-- These 3 links are only for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="../css/simulation.css">
+        <link rel="stylesheet" href="../css/exsim.css">
+    
+      
+
+        <title>Simulation</title>
+    </head>
+    <body id="body-pd">
+      <header class="header" id="header">
+          <div class="header__toggle">
+              <i class='bx bx-menu' id="header-toggle"></i>
+          </div>
+      </header>
+  
+     
+      <div class="l-navbar" id="nav-bar">
+          <nav class="nav">
+              <div>
+                  <a href="#" class="nav__logo">
+                      <i class='bx bx-layer nav__logo-icon'></i>
+                      <span class="nav__logo-name">Virtual Labs</span>
+                  </a>
+      
+                  <div class="nav__list">
+                      <a href="#" class="nav__link active"  onmouseover="playhover()">
+                          <i class='bx bxs-info-circle' onclick="window.location.href='./introduction.html'" ></i>
+                          <span class="nav__name"   onclick="window.location.href='./introduction.html'">Introduction</span>
+                      </a>
+      
+                      <a href="#" class="nav__link " onmouseover="playhover()">
+                          <i class='bx bx-book-bookmark' onclick="window.location.href='./Theory.html'"></i>
+                          <span class="nav__name" onclick="window.location.href='./Theory.html'">Theory</span>
+                      </a>
+      
+                      <a href="#" class="nav__link "  onmouseover="playhover()">
+                          <i class='bx bx-laptop'onclick="window.location.href='./simulation.html'" ></i>
+                          <span class="nav__name" onclick="window.location.href='./simulation.html'">Simulation</span>
+                      </a>
+                      <a href="#" class="nav__link "  onmouseover="playhover()">
+                          <i class='bx bx-brain' onclick="window.location.href='./quiz.html'"></i>
+                          <span class="nav__name"    onclick="window.location.href='./quiz.html'">Quiz</span>
+                      </a>
+                      <a href="#" class="nav__link" onmouseover="playhover()">
+                          <i class='bx bxs-message-rounded-detail' onclick="window.location.href='https://t.me/LabBot_ai'"></i>
+                          <span class="nav__name" onclick="window.location.href='https://t.me/LabBot_ai'">Chatbot</span>
+                      </a>
+      
+      
+                      <a href="#" class="nav__link "  onmouseover="playhover()">
+                          <i class='bx bxs-help-circle'onclick="window.location.href='./faq.html'"></i>
+                          <span class="nav__name"  onclick="window.location.href='./faq.html'">FAQ</span>
+                      </a>
+                  </div>
+            
+              </div>
+      
+              <a href="#" class="nav__link" onmouseover="playudio()">
+                  <i class='bx bx-log-out nav__icon' onmouseover="playhover()"></i>
+                  <span class="nav__name" onclick="window.location.href='/index.html'">Log Out</span>
+              </a>
+          </nav>
+      </div>
+      
+      <audio id="buttonudio" src="../assests/audios/cliccks.mp3"></audio>
+      <audio id="buttonhover" src="../assests/audios/hovvers.mp3"></audio>
+      
+      <script>
+          function playclick() {
+              var audio = document.getElementById('buttonudio');
+              audio.play();
+          }
+  
+          function playhover() {
+              var audio = document.getElementById('buttonhover');
+              audio.play();
+          }
+      </script>
+      
+  
+      
+        
+        <div class="screen">
+
+    <div class="left-side">
+            <div id="graph">
+                <canvas id="canvas" width="600" height="600"  style="border:2px solid #00F0FF"></canvas>
+            </div>
+
+            <div class="graph-controls">
+              <input type="submit" class="selected" value="Polar" id="polar">
+              <input type="submit" value="Rectangular" id="rect">
+              
+              <input type="checkbox" id="unitType" >
+              <label for="unitType">Decibel</label>
+          </div>
+        </div>
+
+
+ <div class="right-side"></div>
+            <div id="control">
+                <div id="topBox">
+                    <p>
+                        <label for="numElements"># of Antennas:</label>
+                        <input id="numElements" name="value">
+                    </p>
+    
+                    <ul>
+                        <li>
+                            <img id="icon1" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input1" />
+                            <div class="slide" id="slider1"></div>
+                        </li>
+                        <li>
+                            <img id="icon2" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input2" />
+                            <div class="slide" id="slider2"></div>
+                        </li>
+                        <li>
+                            <img id="icon3" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input3" />
+                            <div class="slide" id="slider3"></div>
+                        </li>
+                        <li>
+                            <img id="icon4" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input4" />
+                            <div class="slide" id="slider4"></div>
+                        </li>
+                        <li>
+                            <img id="icon5" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input5" />
+                            <div class="slide" id="slider5"></div>
+                        </li>
+                        <li>
+                            <img id="icon6" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input6" />
+                            <div class="slide" id="slider6"></div>
+                        </li>
+                        <li>
+                            <img id="icon7" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input7" />
+                            <div class="slide" id="slider7"></div>
+                        </li>
+                        <li>
+                            <img id="icon8" src="">
+                            <input class="vert-slidebox" id="input8" />
+                            <div class="slide" id="slider8"></div>
+                        </li>
+                        <li>
+                            <img id="icon9" src="../assests/img/ant-de.pngf">
+                            <input class="vert-slidebox" id="input9" />
+                            <div class="slide" id="slider9"></div>
+                        </li>
+                        <li>
+                            <img id="icon10" src="../assests/img/ant-de.png">
+                            <input class="vert-slidebox" id="input10" />
+                            <div class="slide" id="slider10"></div>
+                        </li>
+                    </ul>
+                    
+                    <h3>Relative Currents (Amplitudes)</h3>
+                </div>
+                
+                <div id="botBox">
+    
+                    <h3>Phase Difference ( &beta; ) / Steering Angle</h3>
+                    <input class="horiz-slidebox" id="inputPhase" />
+                    <div id="sliderPhase"></div>
+    
+                    <br>
+                    <h3>Spacing Between Antennas</h3>
+                    <input class="horiz-slidebox" id="inputSpacing" />
+                    <div id="sliderSpacing"></div>
+                    <br><br>
+                    <div class="reset"></div>
+                    <input type="submit" value="Reset" id="reset">
+                </div>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+            </div>
+        
+            <script>
+                var a = new ArRaydiate("canvas");
+            </script>
+        <!--===== MAIN JS =====-->
+        <script src="../javascript/simufuction.js"></script>
+     
+    </body>
+</html>
